@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - <TMPL_VAR NAME="name"></title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="index.html" class="logo"><TMPL_VAR NAME="name"></a>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="projects" class="container">
+        <h2>Projects</h2>
+        <div class="project-grid">
+
+            <TMPL_LOOP NAME="projects">
+                <div class="project">
+                    <h3><TMPL_VAR NAME="title"></h3>
+                    <p><TMPL_VAR NAME="short_description"></p>
+                    <div class="project-details">
+                        <p><TMPL_VAR NAME="long_description"></p>
+                        <p><strong>Technologies:</strong> <TMPL_VAR NAME="technologies"></p>
+                       </div>
+                       <a href="<TMPL_VAR NAME='link'>" class="project-link">Visit Website</a>
+                </div>
+            </TMPL_LOOP>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 <TMPL_VAR NAME="name"></p>
+            <ul>
+                <li><a href="https://github.com/Freedomwithin" target="_blank"><i class="fab fa-github"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
